@@ -71,9 +71,13 @@ func parseLine(line string, pl *Playlist, st *state) error {
 	case matchTag(line, VersionTag):
 		pl.Version, err = parseIntPtr(line, VersionTag)
 	case matchTag(line, PartSegmentItemTag):
-		st.currentItem, err = NewPartSegmentItem(line)
+		item, err := NewPartSegmentItem(line)
 		st.master = false
 		st.open = false
+		if err != nil {
+			return parseError(line, err)
+		}
+		pl.Items = append(pl.Items, item)
 	// media segment tags
 	case matchTag(line, SegmentItemTag):
 		st.currentItem, err = NewSegmentItem(line)
