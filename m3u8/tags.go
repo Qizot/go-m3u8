@@ -11,6 +11,7 @@ const (
 	MapItemTag           = `#EXT-X-MAP`
 	SessionDataItemTag   = `#EXT-X-SESSION-DATA`
 	SegmentItemTag       = `#EXTINF`
+	PartSegmentItemTag   = `#EXT-X-PART`
 	ByteRangeItemTag     = `#EXT-X-BYTERANGE`
 	PlaybackStartTag     = `#EXT-X-START`
 	MediaItemTag         = `#EXT-X-MEDIA`
@@ -38,6 +39,8 @@ const (
 
 	MethodTag            = "METHOD"
 	URITag               = "URI"
+	PartDurationTag      = "DURATION"
+	IndepententTag       = "INDEPENDENT"
 	IVTag                = "IV"
 	KeyFormatTag         = "KEYFORMAT"
 	KeyFormatVersionsTag = "KEYFORMATVERSIONS"

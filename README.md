@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/etherlabsio/go-m3u8.svg?branch=master)](https://travis-ci.org/etherlabsio/go-m3u8)
-[![codecov](https://codecov.io/gh/etherlabsio/go-m3u8/branch/master/graph/badge.svg)](https://codecov.io/gh/etherlabsio/go-m3u8)
-[![Go Report Card](https://goreportcard.com/badge/github.com/etherlabsio/go-m3u8)](https://goreportcard.com/report/github.com/etherlabsio/go-m3u8)
-[![GoDoc](https://godoc.org/github.com/etherlabsio/go-m3u8/m3u8?status.svg)](https://godoc.org/github.com/etherlabsio/go-m3u8/m3u8)
+[![Build Status](https://travis-ci.org/Qizot/go-m3u8.svg?branch=master)](https://travis-ci.org/Qizot/go-m3u8)
+[![codecov](https://codecov.io/gh/Qizot/go-m3u8/branch/master/graph/badge.svg)](https://codecov.io/gh/Qizot/go-m3u8)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Qizot/go-m3u8)](https://goreportcard.com/report/github.com/Qizot/go-m3u8)
+[![GoDoc](https://godoc.org/github.com/Qizot/go-m3u8/m3u8?status.svg)](https://godoc.org/github.com/Qizot/go-m3u8/m3u8)
 
 # go-m3u8
 This is an actively maintained fork of go module https://github.com/quangngotan95/go-m3u8, initally intended for internal use only and later made public.
@@ -16,13 +16,13 @@ Golang package for m3u8 (ported m3u8 gem https://github.com/sethdeckard/m3u8)
 * Optionally, the library can automatically generate the audio/video codecs string used in the CODEC attribute based on specified H.264, AAC, or MP3 options (such as Profile/Level).
 
 ## Installation
-`go get github.com/etherlabsio/go-m3u8`
+`go get github.com/Qizot/go-m3u8`
 
 ## Usage (creating playlists)
 Create a master playlist and child playlists for adaptive bitrate streaming:
 ```go
 import (
-    "github.com/etherlabsio/go-m3u8/m3u8"
+    "github.com/Qizot/go-m3u8/m3u8"
     "github.com/AlekSi/pointer"
 )
 
@@ -120,7 +120,7 @@ Codecs:
 Not all Levels and Profiles can be combined and validation is not currently implemented, consult H.264 documentation for further details.
 
 ## Contributing
-1. Fork it https://github.com/etherlabsio/go-m3u8/fork
+1. Fork it https://github.com/Qizot/go-m3u8/fork
 2. Create your feature branch `git checkout -b my-new-feature`
 3. Run tests `go test ./test/...`, make sure they all pass and new features are covered
 4. Commit your changes `git commit -am "Add new features"`
@@ -128,6 +128,6 @@ Not all Levels and Profiles can be combined and validation is not currently impl
 6. Create a new Pull Request
 
 ## License
-MIT License - See [LICENSE](https://github.com/etherlabsio/go-m3u8/blob/master/LICENSE) for details
+MIT License - See [LICENSE](https://github.com/Qizot/go-m3u8/blob/master/LICENSE) for details
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fetherlabsio%2Fgo-m3u8.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fetherlabsio%2Fgo-m3u8?ref=badge_large)

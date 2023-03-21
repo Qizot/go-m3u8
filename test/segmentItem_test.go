@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/AlekSi/pointer"
-	"github.com/etherlabsio/go-m3u8/m3u8"
+	"github.com/Qizot/go-m3u8/m3u8"
 	"github.com/stretchr/testify/assert"
 )
 

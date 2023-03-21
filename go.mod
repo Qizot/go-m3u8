@@ -1,4 +1,4 @@
-module github.com/etherlabsio/go-m3u8
+module github.com/Qizot/go-m3u8
 
 go 1.13
 

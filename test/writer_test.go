@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/AlekSi/pointer"
-	"github.com/etherlabsio/go-m3u8/m3u8"
+	"github.com/Qizot/go-m3u8/m3u8"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -118,8 +118,8 @@ playlist_url
 				Target:                6,
 				Sequence:              1,
 				DiscontinuitySequence: pointer.ToInt(10),
-				Type:        pointer.ToString("EVENT"),
-				IFramesOnly: true,
+				Type:                  pointer.ToString("EVENT"),
+				IFramesOnly:           true,
 				Items: []m3u8.Item{
 					&m3u8.SegmentItem{
 						Duration: 11.344644,
