@@ -13,6 +13,9 @@ type Playlist struct {
 	Version               *int
 	Cache                 *bool
 	Target                int
+	PartTarget            float64
+	PartHoldBack          float64
+	CanBlockReload        bool
 	Sequence              int
 	DiscontinuitySequence *int
 	Type                  *string

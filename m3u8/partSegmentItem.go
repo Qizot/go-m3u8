@@ -33,7 +33,6 @@ func NewPartSegmentItem(text string) (*PartSegmentItem, error) {
 			ps.Duration = duration
 		} else {
 			return nil, errors.New("Invalid DURATION value")
-
 		}
 	} else {
 		return nil, errors.New("Missing DURATION attribute")

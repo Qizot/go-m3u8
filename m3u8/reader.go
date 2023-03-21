@@ -2,9 +2,11 @@ package m3u8
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"strconv"
 	"strings"
 )
 
@@ -91,6 +93,45 @@ func parseLine(line string, pl *Playlist, st *state) error {
 			return parseError(line, err)
 		}
 		pl.Items = append(pl.Items, item)
+
+	case matchTag(line, ServerControl):
+		value := strings.Replace(line, ServerControl+":", "", -1)
+		value = strings.Replace(value, "\n", "", -1)
+		attributes := ParseAttributes(value)
+
+		if canBlockReload, ok := attributes["CAN-BLOCK-RELOAD"]; ok {
+			if canBlockReload == "YES" {
+				pl.CanBlockReload = true
+			}
+		} else {
+			return parseError(line, errors.New("Missing CAN-BLOCK-RELOAD attribute"))
+		}
+
+		if partHoldBack, ok := attributes["PART-HOLD-BACK"]; ok {
+			if duration, err := strconv.ParseFloat(partHoldBack, 64); err == nil {
+				pl.PartHoldBack = duration
+			} else {
+				return parseError(line, errors.New("Invalid PART-HOLD-BACK value"))
+			}
+		} else {
+			return parseError(line, errors.New("Missing PART-HOLD-BACK attribute"))
+		}
+
+	case matchTag(line, PartSegmentInf):
+		value := strings.Replace(line, ServerControl+":", "", -1)
+		value = strings.Replace(value, "\n", "", -1)
+		attributes := ParseAttributes(value)
+
+		if partTarget, ok := attributes["PART-TARGET"]; ok {
+			if duration, err := strconv.ParseFloat(partTarget, 64); err == nil {
+				pl.PartTarget = duration
+			} else {
+				return parseError(line, errors.New("Invalid PART-TARGET value"))
+			}
+		} else {
+			return parseError(line, errors.New("Missing PART-TARGET attribute"))
+		}
+
 	case matchTag(line, ByteRangeItemTag):
 		value := strings.Replace(line, ByteRangeItemTag+":", "", -1)
 		value = strings.Replace(value, "\n", "", -1)

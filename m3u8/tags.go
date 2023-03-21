@@ -27,9 +27,11 @@ const (
 	DiscontinuitySequenceTag = `#EXT-X-DISCONTINUITY-SEQUENCE`
 	IndependentSegmentsTag   = `#EXT-X-INDEPENDENT-SEGMENTS`
 	PlaylistTypeTag          = `#EXT-X-PLAYLIST-TYPE`
+	PartSegmentInf           = `#EXT-X-PART-INF`
 	IFramesOnlyTag           = `#EXT-X-I-FRAMES-ONLY`
 	MediaSequenceTag         = `#EXT-X-MEDIA-SEQUENCE`
 	VersionTag               = `#EXT-X-VERSION`
+	ServerControl            = `#EXT-X-SERVER-CONTROL`
 
 	// ByteRange tags
 
